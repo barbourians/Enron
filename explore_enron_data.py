@@ -72,7 +72,28 @@ for person in enron_data:
         count+=1
 print '27b. Quiz: Folks with a known email address:',count
 
+# Q29a How many people in the have "NaN" for their total payments?
+# Q29b What percentage of people in the dataset as a whole is this?
+count = 0
+count_total = 0
+for person in enron_data:
+    count_total+=1
+    if enron_data[person]["total_payments"]=="NaN":
+        count+=1
+print '29a. Quiz: People with "NaN" total payments:',count
+print '29b. Quiz: Total of the whole dataset:',count_total
 
+# Q30 How many POIs in the E+F dataset have "NaN" for their total payments?
+# Q30 What percentage of POI's as a whole is this?
+count = 0
+count_total = 0
+for person in enron_data:
+    if enron_data[person]["poi"]==True:
+        count_total+=1
+        if enron_data[person]["total_payments"]=="NaN":
+            count+=1
+print '30a. Quiz: POI with "NaN" total payments:',count
+print '30b. Quiz: Total of the POI dataset:',count_total
 
 
 
